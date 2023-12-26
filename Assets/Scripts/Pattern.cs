@@ -8,8 +8,11 @@ public class Pattern : MonoBehaviour
     public enum PatternTypes {Single, Repeated}
     public PatternTypes patternType;
 
+    [Range(0.0f,10f)] public float hitboxSizeFactor;
+
     private List<bool> patternPointsState;
     private int patternPointsTriggered;
+
 
     void Start()
     {
@@ -17,7 +20,8 @@ public class Pattern : MonoBehaviour
         patternPointsState = new List<bool>();
 
         for (int i = 1; i < GetComponentsInChildren<Transform>().Length; i++) patternPointsState.Add(false);
-        Debug.Log(patternPointsState.Count);
+
+        //TODO Apply the hitboxSizeFactor
     }
 
     public void PatternPointTriggered(int patternPoint)
@@ -33,6 +37,6 @@ public class Pattern : MonoBehaviour
     public void PatternDone()
     {
         Debug.Log("Pattern Done with a score = " + patternPointsTriggered + "/" + patternPointsState.Count);
-        gameObject.active = false;
+        gameObject.SetActive(false);
     }
 }
