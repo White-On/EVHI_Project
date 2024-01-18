@@ -10,13 +10,17 @@ public class Pattern : MonoBehaviour
 
     [Range(0.0f,10f)] public float hitboxSizeFactor;
 
+
+
     private List<bool> patternPointsState;
     private int patternPointsTriggered;
 
+    private int lastPatternPointTriggered; 
 
     void Start()
     {
         patternPointsTriggered = 0;
+        lastPatternPointTriggered = -1;
         patternPointsState = new List<bool>();
 
         for (int i = 1; i < GetComponentsInChildren<Transform>().Length; i++) patternPointsState.Add(false);
@@ -26,17 +30,21 @@ public class Pattern : MonoBehaviour
 
     public void PatternPointTriggered(int patternPoint)
     {
-        
-        patternPointsState[patternPoint] = true;
-        patternPointsTriggered++;
+        if (patternPoint > lastPatternPointTriggered)
+        {
+            patternPointsState[patternPoint] = true;
+            patternPointsTriggered++;
+            lastPatternPointTriggered = patternPoint;
 
-        if (patternPoint == (patternPointsState.Count - 1)) PatternDone(); //TODO : Add a constraint about the time
+            if (patternPoint == (patternPointsState.Count - 1)) PatternDone(); //TODO : Add a constraint about the time
+        }
+        
 
     }
 
     public void PatternDone()
     {
         Debug.Log("Pattern Done with a score = " + patternPointsTriggered + "/" + patternPointsState.Count);
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 }

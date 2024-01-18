@@ -5,15 +5,15 @@ using UnityEngine;
 public class PatternPoint : MonoBehaviour
 {
 
-    private Pattern parent;
+    private Pattern pattern;
 
     private void Start()
     {
-        parent = transform.parent.GetComponent<Pattern>();
+        pattern = transform.parent.GetComponent<Pattern>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        parent.PatternPointTriggered(int.Parse(gameObject.name));
+        pattern.PatternPointTriggered(int.Parse(gameObject.name));
     }
 }
