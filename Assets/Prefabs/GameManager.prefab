@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7345726944040341175
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3899844056884101529}
+  - component: {fileID: 467692361924512311}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3899844056884101529
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7345726944040341175}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &467692361924512311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7345726944040341175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a21f8c88be22b7049bbe7491de722a03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uim: {fileID: 0}
+  levelTime: 10
+  recipesNbr: 5
+  ingredients:
+  - {fileID: 679300930538376500, guid: 55b7b93f74c2cf64fbc67a734f2b9ad8, type: 3}
+  - {fileID: 993565242749231997, guid: 705fe9b5e70c7e046bd4b909dc4605c4, type: 3}
+  - {fileID: 1351935973619403237, guid: 7c8c8a8e3dcbcc640b124012e1eb1066, type: 3}
+  - {fileID: 4785312342570441335, guid: 3f9f15a99a9c2224ba2da6316cb3bd6c, type: 3}
+  - {fileID: 4995203849447826958, guid: 5943c19f368fe1c4ea43d7c080ca38b7, type: 3}
+  - {fileID: 6533491705363042965, guid: 8247d63e29b5dc04d9865c331e783b96, type: 3}
+  - {fileID: 253909023020287161, guid: 40cbe65745a06d34dbac60bde98c80fe, type: 3}
+  - {fileID: 1063752369058986936, guid: 5dad15161756fb7468df1ce953912531, type: 3}
+  - {fileID: 9183596725780792637, guid: af4db93421c65c0419053762b79982b1, type: 3}
+  - {fileID: 1976778217653760320, guid: 0e5ae7cdaf4f8d347bd5f793c10a773f, type: 3}
+  cookers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  patterns:
+  - inf
+  - m
+  - o
+  - spiral
+  - diamond
+  patternRecognitionThreshold: 0.9
+  outputs: []
+  currentStep: 0
+  recipeStartTime: 0
+  ingredientFoundTime: 0
+  cookerFoundTime: 0
+  patternFoundTime: 0
+  predictedRecipeDuration: 0
+  recipesDone: 0
